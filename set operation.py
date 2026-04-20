@@ -1,0 +1,12 @@
+a=input("ENTER ELEMENTS WITH COMMA SEPERATED: ")
+set1=set(a.split(','))
+b=input("ENTER ELEMENTS WITH COMMA SEPERATED: ")
+set2=set(b.split(','))
+s1={}
+s1=set(set1.intersection(set2))
+print("INTERSECTION: ",s1)
+s2=set()
+s2=set1.union(set2)
+print("UNION: ",s2)
+s3=set1.difference(set2)
+print("DIFFERENCE:",s3)
