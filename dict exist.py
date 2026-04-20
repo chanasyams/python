@@ -1,21 +1,24 @@
-def add_key(d):
-    key = int(input("ENTER NEW KEY: "))
-    value = int(input("ENTER NEW VALUE: "))
-    d[key] = value
-    return d
-def sort_value(item):
-    return item[1]
-d = {}
-n = int(input("ENTER NUMBER OF PAIRS: "))
+def exist(dict3,key):
+    if key in dict3:
+        print("ELEMENT EXIST")
+    else:
+        print("ELEMENT NOT EXIST")
+dict1={}
+dict2={}
+n=int(input("ENTER THE PAIRS OF DICT1: "))
+m=int(input("ENTER THE PAIRS OF DICT2: "))
 for i in range(n):
-    k = int(input("ENTER KEY: "))
-    v = int(input("ENTER VALUE: "))
-    d[k] = v
-print("Original Dictionary:", d)
-asc_list = dict(sorted(d.items(), key=sort_value))
-print("Ascending Order:", asc_list)
-asc = dict(asc_list)
-asc = add_key(asc)
-print("After Adding New Key:", asc)
-desc= dict(sorted(asc.items(), key=sort_value, reverse=True))
-print("Descending Order:", desc)
+    key1=int(input("ENTER KEY1: "))
+    val1=int(input("ENTER VALUE1: "))
+    dict1[key1]=val1
+dict3={}
+for j in range(m):
+    key2=int(input("ENTER KEY2: "))
+    val2=int(input("ENTRE VALUE2: "))
+    dict2[key2]=val2
+print(dict1)
+print(dict2)
+dict3=dict(dict1.items() | dict2.items())
+print(dict3)
+key=int(input("ENTER KEY FOR CHECK: "))
+exist(dict3,key)
